@@ -20,15 +20,15 @@ var bicycles = [
     }
 ];
 
-//Calcolo qual è l'oggetto con il valore weight minore
+//Calcolo qual è l'oggetto con il valore 'weight' minore
 var lighterBicycle = Math.min(bicycle1.weight, bicycle2.weight, bicycle3.weight);
 
-//Con un ciclo for estraggo il nome della bicicletta che correisponde a quella con il peso minore
+//Con un ciclo for estraggo il valore 'name' della bicicletta che corrisponde a quella con il peso minore
 for (var i = 0; i < bicycles.length; i++) {
     //Utilizzo il decostructuring per estrapolare le proprietà che mi interessano dagli oggetti
     const {name, weight} = bicycles[i]
-    //Se la caratteristica weight è uguale al peso minore precedentemente calcolato significa che
-    //questo è l'oggetto che mi interessa e ne estrapolo quindi anche la caratteristica name
+    //Se il valore weight è uguale al peso minore precedentemente calcolato significa che
+    //questo è l'oggetto che mi interessa e ne estrapolo quindi anche il valore  'name'
     if (bicycles[i].weight === lighterBicycle) {
         //Stampo il risultato con il metodo template literal
         console.log(`La bicicletta più leggera è ${name}, che pesa ${weight}`)

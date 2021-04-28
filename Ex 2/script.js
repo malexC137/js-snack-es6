@@ -25,38 +25,27 @@ var soccerTeams = [
     },
 ];
 
-//Creo una nuova array in cui pusherò i nuovi oggetti
-var newSoccerTeams = [
-    {
-        name: "",
-        fouls: 0,
-    },
-    {
-        name: "",
-        fouls: 0,
-    },
-    {
-        name: "",
-        fouls: 0,
-    }
-];
-
 //Ciclo la prima array per assegnare dei valori random alle due proprietà numeriche 
 for (var i = 0; i < soccerTeams.length; i++) {
     var randomScores = soccerTeams[i].scores;
-    randomScores = Math.floor(Math.random() * (100 - 80) + 80)
+    randomScores = Math.floor(Math.random() * (100 - 80) + 80);
     var randomFouls = soccerTeams[i].fouls;
     randomFouls = Math.floor(Math.random() * (300 - 150) + 150);
     soccerTeams[i].scores = randomScores;
     soccerTeams[i].fouls = randomFouls;
-    var teamNames = soccerTeams[i].name;
-    newSoccerTeams[i].name = teamNames;
-    newSoccerTeams[i].fouls = randomFouls;
 };
+//Stampo la prima array assegnando dei valori numerici random alle key
+console.log(soccerTeams);
 
-console.log(soccerTeams)
-console.log(newSoccerTeams)
-
+//Con array.map creo una nuova array contenente solo alcune delle proprietà dell'array precedente
+const newTeams = soccerTeams.map((element) => {
+    return {
+        name: element.name,
+        fouls: element.fouls,
+    };
+});
+//Stampo la nuova array
+console.log(newTeams)
 
 
 
